@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">NumerosSorteados2</string>
-    <string name="digite_n_mero_inicial">Digite número inicial</string>
-    <string name="digite_n_meros_final">Digite número final</string>
-    <string name="digite_quatidade_n_meros_sorteados">Digite quantidade de números sorteados</string>
-    <string name="resultado">Resultado</string>
+    <string name="titulo_sorteio_de_n_meros">Sorteio de Números</string>
+
+
 </resources>
