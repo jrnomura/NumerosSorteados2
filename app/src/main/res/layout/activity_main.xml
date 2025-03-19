@@ -12,17 +12,60 @@
         android:layout_width="match_parent"
         android:layout_height="48sp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="90dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/titulo_sorteio_de_n_meros"
-        android:textSize="30sp"
-        android:textColor="@color/black"
         android:gravity="center"
-        android:layout_marginTop="60dp"
+        android:text="@string/titulo_sorteio_de_n_meros"
+        android:textColor="@color/material_dynamic_primary50"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/editQuantNumeros"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:autofillHints=""
+        android:gravity="center"
+        android:hint="@string/digite_os_n_meros_para_sorteio_entre_6_e_15"
+        android:inputType="number"
+        android:maxLength="2"
+        android:textColorHint="@color/material_dynamic_primary50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        tools:text="Olá Mundo"
+        android:textColor="@color/material_dynamic_primary50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editQuantNumeros" />
+
+    <Button
+        android:id="@+id/btnSorteio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/sorteio"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
