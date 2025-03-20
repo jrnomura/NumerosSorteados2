@@ -1,6 +1,9 @@
 package com.example.numerossorteados2
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,14 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val editQuantNumeros: EditText = findViewById(R.id.editQuantNumeros)
+        val txtResultado: TextView = findViewById(R.id.txtResultado)
+        val btnSorteio: Button = findViewById(R.id.btnSorteio)
+
+        btnSorteio.setOnClickListener {
+
+        }
+
     }
 }
