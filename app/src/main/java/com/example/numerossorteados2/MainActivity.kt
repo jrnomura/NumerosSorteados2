@@ -33,33 +33,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun numeros(text: String, txtResultado: TextView) {
 
-        if (text.isNotEmpty()) {
+        if (text.isEmpty()) {
+            Toast.makeText(this, "Digite um número entre 6 e 15", Toast.LENGTH_LONG).show()
+            return
+        }
 
-            val qtd = text.toInt()
-            if (qtd >= 6 && qtd <= 15) {
+        val qtd = text.toInt()
 
-                val num = mutableSetOf<Int>()
-                val random = Random()
+        if (qtd < 6 || qtd > 15) {
+            Toast.makeText(this, "Digite um número entre 6 e 15", Toast.LENGTH_LONG).show()
+            return
+        }
 
-                while (true) {
-                    val numero = random.nextInt(60)
-                    num.add(numero + 1)
+        val num = mutableSetOf<Int>()
+        val random = Random()
 
-                    if (num.size == qtd) {
-                        break
-                    }
+        while (true) {
+            val numero = random.nextInt(60)
+            num.add(numero + 1)
 
-                }
-
-                txtResultado.text = num.joinToString(" - ")
-
-            } else {
-                Toast.makeText(this, "Digite um número entre 6 e 15", Toast.LENGTH_LONG).show()
+            if (num.size == qtd) {
+                break
             }
 
-        } else {
-            Toast.makeText(this, "Digite um número entre 6 e 15", Toast.LENGTH_LONG).show()
         }
+
+        txtResultado.text = num.joinToString(" - ")
+
     }
 }
 
