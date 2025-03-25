@@ -1,5 +1,7 @@
 package com.example.numerossorteados2
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -12,6 +14,9 @@ import androidx.core.view.WindowInsetsCompat
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var prefs: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
@@ -20,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         val editQuantNumeros: EditText = findViewById(R.id.editQuantNumeros)
         val txtResultado: TextView = findViewById(R.id.txtResultado)
         val btnSorteio: Button = findViewById(R.id.btnSorteio)
+
+        prefs = getSharedPreferences("db", Context.MODE_PRIVATE)
+        val result = prefs.getString("result", null)
+        if (result != null){
+            txtResultado.text = "Ultimo Sorteio: $result"
+        }
 
         btnSorteio.setOnClickListener {
 
@@ -59,6 +70,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         txtResultado.text = num.joinToString(" - ")
+
+        val editor = prefs.edit()
+        editor.putString("result", txtResultado.text.toString())
+        editor.apply()
 
     }
 }
